@@ -34,6 +34,7 @@ import Topnav from '../components/layout/Topnav.vue'
         line-height: 200px;
         color:#409eff;
         text-shadow: 2px 2px 4px #000;
+        user-select: none;
     }
     .actions {
         width: 100%;

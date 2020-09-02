@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="topnav">
-            <div class="logo">mcc-vue3-ui</div>
+            <div class="logo" @click="toggleMenu">mcc-vue3-ui</div>
             <div class="menu">
                 <div 
                 :class="['menu_item',{'active':activeIndex == index}]"
@@ -16,8 +16,19 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { inject, Ref } from 'vue'
     export default {
+        setup(){
+            const menuVisible = inject<Ref<boolean>>("xxx")
+            console.log("topnav :"+menuVisible.value)
+            const toggleMenu = ()=>{
+                menuVisible.value = !menuVisible.value
+            }
+            return { 
+                toggleMenu
+            }
+        },
         data(){
             return {
                 activeIndex:0,
@@ -57,6 +68,7 @@
             color: #fff;
             font-weight: bold;
             text-indent: 20px;
+            cursor: pointer;
         }
         .menu {
             float:right;

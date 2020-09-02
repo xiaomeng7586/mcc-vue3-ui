@@ -1,12 +1,25 @@
 <template>
     <div>
-        <div class="topnav">
-            <div class="logo"></div>
-            <div class="menu"></div>
-        </div>
+        <Topnav />
         <div class="content">
-            <aside>边栏</aside>
+            <Aside />
             <main>主内容</main>
         </div>
     </div>
 </template>
+
+<script>
+import Topnav from '../components/layout/Topnav.vue'
+import Aside from '../components/layout/Aside.vue'
+export default {
+    components:{
+        Topnav,
+        Aside
+    },
+    data(){
+        return {
+            
+        }
+    }
+}
+</script>

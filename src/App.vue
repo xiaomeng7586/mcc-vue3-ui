@@ -9,7 +9,7 @@ export default {
     name: 'App',
     setup(){
         const menuVisible = ref(false)
-        provide('xxx',menuVisible)
+        provide('menuVisible',menuVisible)
     }
 }
 </script>

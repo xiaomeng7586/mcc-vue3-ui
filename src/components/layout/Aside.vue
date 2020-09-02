@@ -24,7 +24,7 @@
 import { inject, Ref } from "vue"
 export default {
     setup(){
-        const menuVisible = inject<Ref<boolean>>("xxx")
+        const menuVisible = inject<Ref<boolean>>("menuVisible")
         console.log("Aside :"+menuVisible.value)
         return { menuVisible }
     },

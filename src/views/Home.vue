@@ -1,9 +1,6 @@
 <template>
     <div>
-        <div class="topnav">
-            <div class="logo"></div>
-            <div class="menu"></div>
-        </div>
+        <Topnav />
         <div class="banner">
             <h1>MCC UI</h1>
             <h2>我的vue3-UI框架</h2>
@@ -14,7 +11,16 @@
         </div>
     </div>
 </template>
-
-<style lang="scss" scoped>
-
-</style>
+<script lang="ts">
+import Topnav from '../components/layout/Topnav.vue'
+    export default {
+        components:{
+            Topnav
+        },
+        data(){
+            return {
+                
+            }
+        }
+    }
+</script>

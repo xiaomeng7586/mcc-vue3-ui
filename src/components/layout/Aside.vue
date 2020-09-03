@@ -1,6 +1,6 @@
 <template>
-    <div v-if="menuVisible">
-        <aside>
+    <div>
+        <aside :class="[{'hide':!menuVisible}]">
             <h2>组件列表</h2>
             <ul>
                 <li>
@@ -39,5 +39,10 @@ export default {
         left: 0;
         top: 50px;
         border-right: 1px solid rgb(173, 169, 169);
+        transition:0.3s ease-in-out;
+        &.hide {
+            left: -200px;
+            transition:0.3s ease-in-out;
+        }
     }
 </style>

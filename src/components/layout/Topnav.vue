@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="topnav">
-            <div class="logo" @click="toggleMenu">mcc-vue3-ui</div>
+            <div class="logo">mcc-vue3-ui</div>
             <div class="menu">
                 <div 
                 :class="['menu_item',{'active':activeIndex == index}]"
@@ -12,6 +12,7 @@
                     <span >{{item.title}}</span>
                 </div>
             </div>
+            <div class="toggles" @click="toggleMenu"></div>
         </div>
     </div>
 </template>
@@ -58,35 +59,78 @@ import { inject, Ref } from 'vue'
 
 <style lang="scss" scoped>
     .topnav {
-        width: 100%;
+        display:flex;
         height: 50px;
+        position: relative;
+        padding: 0 30px;
         background: #409eff;
+        z-index: 10;
         .logo {
-            float: left;
             font-size: 30px;
-            line-height: 50px;
             color: #fff;
             font-weight: bold;
-            text-indent: 20px;
-            cursor: pointer;
+            max-width: 6em;
+            margin-right: auto;
+            line-height: 50px;
         }
         .menu {
-            float:right;
-            padding-right: 30px;
+            display:flex;
+            white-space: nowrap;
+            flex-wrap: nowrap;
             .menu_item {
-                float: left;
-                width: 50px;
-                height: 50px;
-                padding: 0 10px;
                 font-size: 16px;
                 line-height: 50px;
                 color: #fff;
                 cursor: pointer;
                 transition: 0.1s ease-in;
+                margin:0 1em;
                 &.active {
                     font-size: 24px;
+                    line-height: 50px;
                     transition: 0.1s ease-out;
                 }
+            }
+        }
+        .toggles {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            cursor: pointer;
+            display: none;
+            overflow: hidden;
+            &:before {
+                content: "";
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: #409eff;
+                transform: rotateZ(45deg);
+            }
+            &:after {
+                content: "";
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                left: 7px;
+                top: 7px;
+                background: #fff;
+                transform: rotateZ(45deg);
+            }
+        }
+        @media (max-width: 500px) {
+            > .menu {
+                display: none;
+            } 
+            > .logo {
+                margin: 0 auto;
+            }
+            > .toggles {
+                display: block;
             }
         }
     }

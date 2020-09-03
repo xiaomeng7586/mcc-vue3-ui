@@ -1,0 +1,26 @@
+export default {
+    path:"/doc",
+    component:()=>import("../views/doc/Doc.vue"),
+    children:[
+        {
+            path:"",
+            component:()=>import("../views/doc/SwitchDemo.vue")
+        },
+        {
+            path:"switchDemo",
+            component:()=>import("../views/doc/SwitchDemo.vue")
+        },
+        {
+            path:"buttonDemo",
+            component:()=>import("../views/doc/ButtonDemo.vue")
+        },
+        {
+            path:"dialogDemo",
+            component:()=>import("../views/doc/DialogDemo.vue")
+        },
+        {
+            path:"tabsDemo",
+            component:()=>import("../views/doc/TabsDemo.vue")
+        },
+    ]
+}

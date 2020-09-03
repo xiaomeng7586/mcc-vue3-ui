@@ -80,10 +80,10 @@ import { inject, Ref } from 'vue'
             .menu_item {
                 font-size: 16px;
                 line-height: 50px;
+                width: 70px;
                 color: #fff;
                 cursor: pointer;
                 transition: 0.1s ease-in;
-                margin:0 1em;
                 &.active {
                     font-size: 24px;
                     line-height: 50px;

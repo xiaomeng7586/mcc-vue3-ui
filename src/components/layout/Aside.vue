@@ -4,16 +4,16 @@
             <h2>组件列表</h2>
             <ul>
                 <li>
-                    <router-link to="/doc/swich">Swich 组件</router-link>
+                    <router-link to="/doc/switchDemo">Switch 组件</router-link>
                 </li>
                 <li>
-                    <router-link to="/doc/button">Button 组件</router-link>
+                    <router-link to="/doc/buttonDemo">Button 组件</router-link>
                 </li>
                 <li>
-                    <router-link to="/doc/dialog">Dialog 组件</router-link>
+                    <router-link to="/doc/dialogDemo">Dialog 组件</router-link>
                 </li>
                 <li>
-                    <router-link to="/doc/tabs">Tabs 组件</router-link>
+                    <router-link to="/doc/tabsDemo">Tabs 组件</router-link>
                 </li>
             </ul>
         </aside>
@@ -38,6 +38,7 @@ export default {
         position: fixed;
         left: 0;
         top: 50px;
+        background: #fff;
         border-right: 1px solid rgb(173, 169, 169);
         transition:0.3s ease-in-out;
         &.hide {

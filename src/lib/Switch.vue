@@ -1,18 +1,20 @@
 <template>
     <div class="swicth">
-        <button :class="{'checked':checked}" @click="toggle"><span></span></button>
+        <button :class="{'checked':value}" @click="toggle"><span></span></button>
     </div>
 </template>
 
 <script lang="ts">
 import { ref } from 'vue'
     export default {
-        setup(){
-            const checked = ref<boolean>(false)
+        props:{
+            value:Boolean
+        },
+        setup(props,context){
             const toggle = () =>{
-                checked.value = !checked.value
+                context.emit("input",!props.value)
             }
-            return {checked,toggle}
+            return {toggle}
         }
     }
 </script>
@@ -40,7 +42,7 @@ $h2:$h - 4px;
             width: $h2;
             background: #fff;
             border-radius: $h2 / 2;
-            transition: left 0.2s linear;
+            transition: left 0.25s linear;
         }
         &.checked  {
             background: #409eff;

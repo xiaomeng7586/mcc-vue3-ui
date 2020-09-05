@@ -1,5 +1,5 @@
 <template>
-    <button class="mcc-button" :class="`theme-${theme}`">
+    <button class="mcc-button" :class="`mcc-theme-${theme}`">
         <slot />
     </button>
 </template>
@@ -16,7 +16,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h:32px;
 $border-color:#d9d9d9;
 $color:#333;
@@ -49,6 +49,22 @@ $radius:4px;
     }
     &::-moz-focus-inner {
         border:0;
+    }
+    &.mcc-theme-link {
+        border-color: transparent;
+        box-shadow: none;
+        color:$blue;
+        &:hover,&:focus {
+            color:lighten($color: #000000, $amount: 10%);
+        }
+    }
+    &.mcc-theme-text {
+        border-color:transparent;
+        box-shadow: none;
+        color: inherit;
+        &:hover,&:focus {
+            background: darken($color: #fff, $amount: 5%);
+        }
     }
 }
 </style>

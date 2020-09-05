@@ -1,7 +1,11 @@
 <template>
     <div>
-        <h1>示例1</h1>
-        <Button @click="clickButton" @mouseover="clickButton" @focus="clickButton" :size="'simple'">我是按钮</Button>
+        <h4>示例</h4>
+        <br>
+        <Button>我是按钮1</Button>
+        <Button theme="button">我是按钮2</Button>
+        <Button theme="link">我是按钮3</Button>
+        <Button theme="text">我是按钮4</Button>
     </div>
 </template>
 
@@ -11,11 +15,5 @@ import Button from '../../lib/Button.vue'
         components:{
             Button
         },
-        setup(props,context){
-            const clickButton =()=>{
-                console.log("buttons")
-            }
-            return { clickButton }
-        }
     }
 </script>

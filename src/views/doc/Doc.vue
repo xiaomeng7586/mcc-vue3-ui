@@ -33,9 +33,7 @@ export default {
         min-height: calc(100vh - 70px);
         margin-left: 210px;
         margin-top: 10px;
-        background: rgb(235, 243, 224);
         main {
-            box-shadow: 2px 2px 2px rgb(139, 139, 139),-2px -2px 2px rgb(139, 139, 139),2px -2px 2px rgb(139, 139, 139),-2px 2px 2px rgb(139, 139, 139);
             border-radius: 4px;
             width:100%;
             padding: 10px;

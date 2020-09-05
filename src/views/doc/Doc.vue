@@ -38,6 +38,7 @@ export default {
             box-shadow: 2px 2px 2px rgb(139, 139, 139),-2px -2px 2px rgb(139, 139, 139),2px -2px 2px rgb(139, 139, 139),-2px 2px 2px rgb(139, 139, 139);
             border-radius: 4px;
             width:100%;
+            padding: 10px;
         }
     }
     @media (max-width:500px) {

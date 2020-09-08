@@ -1,18 +1,38 @@
 <template>
-    <button class="mcc-button" :class="`mcc-theme-${theme}`">
+    <button class="mcc-button" :class="classes">
         <slot />
     </button>
 </template>
 
 <script lang="ts">
+import { computed } from 'vue'
     export default {
         inheritAttrs:false,
         props:{
             theme:{
                 type:String,
                 default:"button"
+            },
+            size:{
+                type:String,
+                default:"normal"
+            },
+            level:{
+                type:String,
+                default:"normal"
             }
         },
+        setup(props) {
+            const { theme,size,level} = props
+            const classes = computed(()=>{
+                return {
+                [`mcc-theme-${theme}`]:theme,
+                [`mcc-size-${size}`]:size,
+                [`mcc-level-${level}`]:level
+                }
+            })
+            return { classes }
+        }
     }
 </script>
 
@@ -50,12 +70,28 @@ $radius:4px;
     &::-moz-focus-inner {
         border:0;
     }
+    &.mcc-theme-button {
+         &.mcc-level-main {
+            background: $blue;
+            color: #fff;
+        }
+        &.mcc-level-danger {
+            background: red;
+            color: #fff;
+        }
+    }
     &.mcc-theme-link {
         border-color: transparent;
         box-shadow: none;
         color:$blue;
         &:hover,&:focus {
             color:lighten($color: #000000, $amount: 10%);
+        }
+        &.mcc-level-main {
+            color: $blue;
+        }
+        &.mcc-level-danger {
+            color: red;
         }
     }
     &.mcc-theme-text {
@@ -65,6 +101,21 @@ $radius:4px;
         &:hover,&:focus {
             background: darken($color: #fff, $amount: 5%);
         }
+        &.mcc-level-main {
+            color: $blue;
+        }
+        &.mcc-level-danger {
+            color: red;
+        }
     }
+    &.mcc-size-big {
+        height: $h + 6px;
+        font-size: 16px;
+    }
+    &.mcc-size-small {
+        height: $h - 6px;
+        font-size: 12px;
+    }
+   
 }
 </style>
